@@ -2,12 +2,12 @@
 
 importer="wav"
 type="AudioStreamSample"
-path="res://.import/GentleRoarPinkNoise.wav-0f63aa8a2510bacefeeae1949356c912.sample"
+path="res://.import/GentleRoarPinkNoise.wav-43f38b07aa7db83b24247de75127d7a1.sample"
 
 [deps]
 
-source_file="res://assets/audio/sfx/GentleRoarPinkNoise.wav"
-dest_files=[ "res://.import/GentleRoarPinkNoise.wav-0f63aa8a2510bacefeeae1949356c912.sample" ]
+source_file="res://Assets/audio/sfx/GentleRoarPinkNoise.wav"
+dest_files=[ "res://.import/GentleRoarPinkNoise.wav-43f38b07aa7db83b24247de75127d7a1.sample" ]
 
 [params]
 

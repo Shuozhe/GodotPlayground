@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/laserBlue12.png-3de0864d8406f2cde360e78a3bdeeea2.stex"
+path="res://.import/laserBlue12.png-3b7f2b3d465f27c67817c65663d375c3.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/lasers/laserBlue12.png"
-dest_files=[ "res://.import/laserBlue12.png-3de0864d8406f2cde360e78a3bdeeea2.stex" ]
+source_file="res://Assets/images/lasers/laserBlue12.png"
+dest_files=[ "res://.import/laserBlue12.png-3b7f2b3d465f27c67817c65663d375c3.stex" ]
 
 [params]
 
