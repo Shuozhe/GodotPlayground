@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/meteorBrown_big1.png-957f8c203820e912105bbc2da35d7a06.stex"
+path="res://.import/meteorBrown_big1.png-42a7d0c6a75b7c6850051e817a52c915.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/images/asteroids/meteorBrown_big1.png"
-dest_files=[ "res://.import/meteorBrown_big1.png-957f8c203820e912105bbc2da35d7a06.stex" ]
+source_file="res://assets/images/asteroids/meteorBrown_big1.png"
+dest_files=[ "res://.import/meteorBrown_big1.png-42a7d0c6a75b7c6850051e817a52c915.stex" ]
 
 [params]
 

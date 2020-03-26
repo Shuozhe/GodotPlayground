@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/laserRed06.png-31aa15f220f9981888b80b217de06704.stex"
+path="res://.import/laserRed06.png-3bc7338bb3954bcdf70a91f5a5ab88ce.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/images/lasers/laserRed06.png"
-dest_files=[ "res://.import/laserRed06.png-31aa15f220f9981888b80b217de06704.stex" ]
+source_file="res://assets/images/lasers/laserRed06.png"
+dest_files=[ "res://.import/laserRed06.png-3bc7338bb3954bcdf70a91f5a5ab88ce.stex" ]
 
 [params]
 

@@ -10,17 +10,21 @@ public class Game : Node2D
   // Called when the node enters the scene tree for the first time.
   public override void _Ready()
   {
-	Connect("resized", this, "CallWrapAround");
+    //Connect("resized", this, "call_wrap_around");
   }
 
 
   public void CallWrapAround()
   {
-	GetTree().CallGroup("WrapAround", "recalculate_wrap_area");
+    GetTree().CallGroup("WrapAround", "recalculate_wrap_area");
   }
-  //  // Called every frame. 'delta' is the elapsed time since the previous frame.
-  //  public override void _Process(float delta)
-  //  {
-  //      
-  //  }
+
+
+  private void _on_Game_item_rect_changed()
+  {
+    CallWrapAround();
+  }
+
+
 }
+

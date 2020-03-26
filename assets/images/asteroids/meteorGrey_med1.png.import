@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/meteorGrey_med1.png-6b0bdc7cb5c71a2dfcac6bf9a52154b2.stex"
+path="res://.import/meteorGrey_med1.png-682ee90d714d31150b6bc0bc2494b614.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/images/asteroids/meteorGrey_med1.png"
-dest_files=[ "res://.import/meteorGrey_med1.png-6b0bdc7cb5c71a2dfcac6bf9a52154b2.stex" ]
+source_file="res://assets/images/asteroids/meteorGrey_med1.png"
+dest_files=[ "res://.import/meteorGrey_med1.png-682ee90d714d31150b6bc0bc2494b614.stex" ]
 
 [params]
 

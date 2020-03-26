@@ -53,8 +53,11 @@
     <Reference Include="System" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Scripts\Asteroid.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Scripts\AsteroidSpawner.cs" />
     <Compile Include="Scripts\Game.cs" />
+    <Compile Include="Scripts\Laser.cs" />
     <Compile Include="Scripts\LaserWeapon.cs" />
     <Compile Include="Scripts\Player.cs" />
   </ItemGroup>

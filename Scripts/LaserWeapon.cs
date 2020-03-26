@@ -3,24 +3,18 @@ using System;
 
 public class LaserWeapon : Node2D
 {
-  // Declare member variables here. Examples:
-  // private int a = 2;
-  // private string b = "text";
+  PackedScene laser;
 
   // Called when the node enters the scene tree for the first time.
   public override void _Ready()
   {
-    var laser = GD.Load("res://Objects/Laser.tscn");
+    laser = GD.Load("res://Objects/Laser.tscn") as PackedScene;
   }
 
-  public void Shoot()
+  public void Fire()
   {
-    var laser = GetNode("Laser");
+    var laserInstance = (Area2D)laser.Instance();
+    laserInstance.GlobalPosition = GlobalPosition;
+    GetNode("/root/Game").AddChild(laserInstance);
   }
-
-  //  // Called every frame. 'delta' is the elapsed time since the previous frame.
-  //  public override void _Process(float delta)
-  //  {
-  //      
-  //  }
 }

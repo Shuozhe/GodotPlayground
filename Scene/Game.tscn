@@ -1,10 +1,11 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Objects/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Objects/Asteroid.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scripts/Game.cs" type="Script" id=3]
+[ext_resource path="res://Objects/AsteroidSpawner.tscn" type="PackedScene" id=4]
 
-[node name="Node2D" type="Node2D"]
+[node name="Game" type="Node2D"]
 script = ExtResource( 3 )
 
 [node name="Asteroid" parent="." instance=ExtResource( 2 )]
@@ -13,7 +14,14 @@ position = Vector2( 12.6722, 191.249 )
 [node name="Asteroid2" parent="." instance=ExtResource( 2 )]
 position = Vector2( 1157.19, 92.796 )
 
+[node name="Asteroid" parent="Asteroid2" instance=ExtResource( 2 )]
+position = Vector2( -675.19, -17.796 )
+
 [node name="Asteroid3" parent="." instance=ExtResource( 2 )]
 position = Vector2( 1083.35, 521.769 )
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
+position = Vector2( 479.238, 381.987 )
+
+[node name="AsteroidSpawner" parent="." instance=ExtResource( 4 )]
+[connection signal="item_rect_changed" from="." to="." method="_on_Game_item_rect_changed"]

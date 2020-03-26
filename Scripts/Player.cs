@@ -15,18 +15,28 @@ public class Player : KinematicBody2D
   }
 
   // Called every frame. 'delta' is the elapsed time since the previous frame.
-  public override void _Process(float delta)
+  public override void _PhysicsProcess(float delta)
   {
-	var vel = new Vector2();
-	if (Input.IsActionPressed("ui_left"))
-	  vel.x = -speed;
-	if (Input.IsActionPressed("ui_right"))
-	  vel.x = speed;
-	if (Input.IsActionPressed("ui_up"))
-	  vel.y = -speed;
-	if (Input.IsActionPressed("ui_down"))
-	  vel.y = speed;
+    var vel = new Vector2();
+    if (Input.IsActionPressed("ui_left"))
+      vel.x = -speed;
+    if (Input.IsActionPressed("ui_right"))
+      vel.x = speed;
+    if (Input.IsActionPressed("ui_up"))
+      vel.y = -speed;
+    if (Input.IsActionPressed("ui_down"))
+      vel.y = speed;
 
-	MoveAndCollide(vel * delta);
+    MoveAndCollide(vel * delta);
+  }
+
+  public override void _UnhandledInput(InputEvent ev)
+  {
+    if (ev.IsActionPressed("fire"))
+    {
+      var laser = GetNode("LaserWeapon") as LaserWeapon;
+      laser.Fire();
+      GD.Print("FIRE!");
+    }
   }
 }
