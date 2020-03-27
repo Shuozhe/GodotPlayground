@@ -3,6 +3,9 @@ using System;
 
 public class Player : KinematicBody2D
 {
+  [Signal]
+  public delegate void OnFire();
+
   const float speed = 600;
   // Declare member variables here. Examples:
   // private int a = 2;
@@ -22,10 +25,10 @@ public class Player : KinematicBody2D
       vel.x = -speed;
     if (Input.IsActionPressed("ui_right"))
       vel.x = speed;
-    if (Input.IsActionPressed("ui_up"))
-      vel.y = -speed;
-    if (Input.IsActionPressed("ui_down"))
-      vel.y = speed;
+    //if (Input.IsActionPressed("ui_up"))
+    //  vel.y = -speed;
+    //if (Input.IsActionPressed("ui_down"))
+    //  vel.y = speed;
 
     MoveAndCollide(vel * delta);
   }
@@ -37,6 +40,17 @@ public class Player : KinematicBody2D
       var laser = GetNode("LaserWeapon") as LaserWeapon;
       laser.Fire();
       GD.Print("FIRE!");
+      EmitSignal(nameof(OnFire));
+    }
+  }
+
+  private void _on_Hitbox_body_entered(Node body)
+  {
+    GD.Print("Player hit by something..!");
+    if (!IsQueuedForDeletion() && body.IsInGroup("Asteroids"))
+    {
+      QueueFree();
+      GD.Print("Player hit by asteroid!");
     }
   }
 }

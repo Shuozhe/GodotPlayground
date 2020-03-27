@@ -2,12 +2,12 @@
 
 importer="wav"
 type="AudioStreamSample"
-path="res://.import/AsteroidExplosion.wav-bd06a20f76aa119c9678e28f702edc2e.sample"
+path="res://.import/AsteroidExplosion.wav-c358e17b9bfa33356fa679d02b0ead48.sample"
 
 [deps]
 
-source_file="res://assets/audio/sfx/AsteroidExplosion.wav"
-dest_files=[ "res://.import/AsteroidExplosion.wav-bd06a20f76aa119c9678e28f702edc2e.sample" ]
+source_file="res://Assets/audio/sfx/AsteroidExplosion.wav"
+dest_files=[ "res://.import/AsteroidExplosion.wav-c358e17b9bfa33356fa679d02b0ead48.sample" ]
 
 [params]
 

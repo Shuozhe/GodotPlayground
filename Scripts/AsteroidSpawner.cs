@@ -15,8 +15,19 @@ public class AsteroidSpawner : Node
   private void SpawnAsteroid()
   {
     Asteroid newAst = (Asteroid)asteroid.Instance();
-    newAst.Position = new Vector2(50, -100);
+    InitializeAsteroid(newAst);
     AddChild(newAst);
+  }
+
+  private void InitializeAsteroid(Asteroid asteroid)
+  {
+    var rect = GetViewport().Size;
+    asteroid.Position = new Vector2((float)GD.RandRange(0, rect.x), -100);
+
+    asteroid.AngularVelocity = (float)GD.RandRange(-4, 4);
+    asteroid.AngularDamp = 0;
+    asteroid.LinearVelocity = new Vector2((float)GD.RandRange(-300, 300), 300);
+    asteroid.LinearDamp = 0;
   }
 }
 
