@@ -5,9 +5,11 @@ using System.Diagnostics;
 public class Asteroid : RigidBody2D
 {
   private bool destroyed = false;
-  private PackedScene explosion_;
 
-  readonly PackedScene asteroidSmallScene = GD.Load<PackedScene>("res://objects/AsteroidSmall.tscn");
+  readonly private PackedScene explosion_ = GD.Load<PackedScene>("res://Common/AsteroidParticle.tscn");
+  readonly private PackedScene asteroidSmall_ = GD.Load<PackedScene>("res://objects/AsteroidSmall.tscn");
+  readonly private PackedScene pointsScored_ = GD.Load<PackedScene>("res://UI//PointsScored.tscn");
+
   readonly RandomNumberGenerator rng = new RandomNumberGenerator();
 
   protected virtual int SCORE_VALUE { get { return 100; } }
@@ -24,8 +26,8 @@ public class Asteroid : RigidBody2D
     destroyed = false;
 
     var camera = GetNode("/root/Game/MainCamera/ScreenShake");
-    explosion_ = GD.Load("res://Common/AsteroidParticle.tscn") as PackedScene;
     Connect("OnExplode", camera, "AsteroidExploded");
+
     var label = GetNode("/root/Game/GUI/MarginContainer/HBoxContainer/VBoxContainer/Score");
     Connect("OnScoreChanged", label, "AddScore");
   }
@@ -39,6 +41,8 @@ public class Asteroid : RigidBody2D
     SpawnAsteroidSmall();
     ExplosionParticle();
     ExplosionSound();
+    SpawnScore();
+
     GetParent().RemoveChild(this);
     QueueFree();
 
@@ -50,7 +54,7 @@ public class Asteroid : RigidBody2D
   {
     for (int i = 0; i < num; i++)
     {
-      var asteroid = (AsteroidSmall)asteroidSmallScene.Instance();
+      var asteroid = (AsteroidSmall)asteroidSmall_.Instance();
       asteroid.Position = Position;
       asteroid.RandomizeTrajectory();
       GetParent().AddChild(asteroid);
@@ -91,5 +95,14 @@ public class Asteroid : RigidBody2D
     audio.Position = Position;
     GetParent().AddChild(audio);
     audio.Play(0);
+  }
+
+  private void SpawnScore()
+  {
+    var point = pointsScored_.Instance() as Node2D;
+    point.GetNode<Label>("Label").Text = SCORE_VALUE.ToString();
+    point.Position = Position;
+    GD.Print(GetParent().ToString());
+    GetParent().AddChild(point);
   }
 }

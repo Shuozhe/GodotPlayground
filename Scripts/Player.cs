@@ -6,18 +6,24 @@ public class Player : KinematicBody2D
   [Signal]
   public delegate void OnFire();
 
+  [Signal]
+  public delegate void OnPlayerDestroyed();
+
+  PackedScene explosionScene_ = GD.Load<PackedScene>("res://Common/PlayerExplosion.tscn");
+
   const float speed = 600;
-  // Declare member variables here. Examples:
-  // private int a = 2;
-  // private string b = "text";
+
 
   // Called when the node enters the scene tree for the first time.
   public override void _Ready()
   {
+    var shake = GetParent().GetNode<Node>("MainCamera/ScreenShake");
+    Connect("OnFire", shake, "_on_Player_OnFire");
 
+    var game = GetParent();
+    Connect("OnPlayerDestroyed", game, "_on_Player_OnPlayerDestroyed");
   }
 
-  // Called every frame. 'delta' is the elapsed time since the previous frame.
   public override void _PhysicsProcess(float delta)
   {
     var vel = new Vector2();
@@ -39,18 +45,22 @@ public class Player : KinematicBody2D
     {
       var laser = GetNode("LaserWeapon") as LaserWeapon;
       laser.Fire();
-      GD.Print("FIRE!");
       EmitSignal(nameof(OnFire));
     }
   }
 
   private void _on_Hitbox_body_entered(Node body)
   {
-    GD.Print("Player hit by something..!");
     if (!IsQueuedForDeletion() && body.IsInGroup("Asteroids"))
     {
+      var particle = explosionScene_.Instance() as Particles2D;
+      particle.Position = Position;
+      GetParent().AddChild(particle);
+      particle.Emitting = true;
+
       QueueFree();
-      GD.Print("Player hit by asteroid!");
+
+      EmitSignal("OnPlayerDestroyed");
     }
   }
 }

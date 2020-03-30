@@ -4,13 +4,24 @@ using System.Diagnostics;
 
 public class AsteroidSpawner : Node
 {
-  private PackedScene asteroid_;
+  readonly private PackedScene asteroid_ = GD.Load("res://Objects/Asteroid.tscn") as PackedScene;
+
+  float spawnInterval_;
+  float difficultyIndex_;
+
 
   // Called when the node enters the scene tree for the first time.
   public override void _Ready()
   {
-    asteroid_ = GD.Load("res://Objects/Asteroid.tscn") as PackedScene;
+    Restart();
     SpawnAsteroid();
+  }
+
+  public void Restart()
+  {
+    spawnInterval_ = 2.0f;
+    difficultyIndex_ = 1.5f;
+    GetNode<Timer>("SpawnTimer").WaitTime = spawnInterval_ / difficultyIndex_;
   }
 
   private void SpawnAsteroid()
@@ -29,5 +40,11 @@ public class AsteroidSpawner : Node
     asteroid.AngularDamp = 0;
     asteroid.LinearVelocity = new Vector2((float)GD.RandRange(-300, 300), 300);
     asteroid.LinearDamp = 0;
+  }
+
+  private void _on_DifficultyTimer_timeout()
+  {
+    GetNode<Timer>("SpawnTimer").WaitTime = spawnInterval_ / difficultyIndex_;
+    difficultyIndex_ += 1.0f;
   }
 }

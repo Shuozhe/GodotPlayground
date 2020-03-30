@@ -27,4 +27,5 @@ position = Vector2( 0, 2 )
 stream = ExtResource( 2 )
 volume_db = -10.0
 pitch_scale = 0.5
+autoplay = true
 [connection signal="screen_exited" from="VisibilityNotifier2D" to="." method="_on_VisibilityNotifier2D_screen_exited"]
