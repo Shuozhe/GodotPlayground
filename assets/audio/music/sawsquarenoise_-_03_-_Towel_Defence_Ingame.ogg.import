@@ -2,12 +2,12 @@
 
 importer="ogg_vorbis"
 type="AudioStreamOGGVorbis"
-path="res://.import/sawsquarenoise_-_03_-_Towel_Defence_Ingame.ogg-24088080ebbc84b2ccf6979037a7812a.oggstr"
+path="res://.import/sawsquarenoise_-_03_-_Towel_Defence_Ingame.ogg-2f9ed549dd2ce155b90eaf56c25eccc7.oggstr"
 
 [deps]
 
-source_file="res://Assets/audio/music/sawsquarenoise_-_03_-_Towel_Defence_Ingame.ogg"
-dest_files=[ "res://.import/sawsquarenoise_-_03_-_Towel_Defence_Ingame.ogg-24088080ebbc84b2ccf6979037a7812a.oggstr" ]
+source_file="res://assets/audio/music/sawsquarenoise_-_03_-_Towel_Defence_Ingame.ogg"
+dest_files=[ "res://.import/sawsquarenoise_-_03_-_Towel_Defence_Ingame.ogg-2f9ed549dd2ce155b90eaf56c25eccc7.oggstr" ]
 
 [params]
 

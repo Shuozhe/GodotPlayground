@@ -2,12 +2,12 @@
 
 importer="wav"
 type="AudioStreamSample"
-path="res://.import/ScorePoint.wav-26553625b6ed04a61dc5e295203d136a.sample"
+path="res://.import/ScorePoint.wav-845201ca3caa2f4972c95887dd8144a0.sample"
 
 [deps]
 
-source_file="res://Assets/audio/sfx/ScorePoint.wav"
-dest_files=[ "res://.import/ScorePoint.wav-26553625b6ed04a61dc5e295203d136a.sample" ]
+source_file="res://assets/audio/sfx/ScorePoint.wav"
+dest_files=[ "res://.import/ScorePoint.wav-845201ca3caa2f4972c95887dd8144a0.sample" ]
 
 [params]
 
