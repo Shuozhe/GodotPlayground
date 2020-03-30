@@ -1,0 +1,45 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://ProjectAlpha/Scripts/Gui/MainMenu.cs" type="Script" id=1]
+
+[node name="Menu" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 2.58472
+margin_right = 2.58472
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VSplitContainer" type="VBoxContainer" parent="."]
+margin_left = 67.2025
+margin_top = 111.143
+margin_right = 411.203
+margin_bottom = 645.143
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="Button" parent="VSplitContainer"]
+margin_right = 344.0
+margin_bottom = 20.0
+text = "Start Game"
+
+[node name="Button2" type="Button" parent="VSplitContainer"]
+margin_top = 24.0
+margin_right = 344.0
+margin_bottom = 44.0
+text = "Ship Editor"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button3" type="Button" parent="VSplitContainer"]
+margin_top = 48.0
+margin_right = 344.0
+margin_bottom = 68.0
+text = "Exit"
+[connection signal="pressed" from="VSplitContainer/Button" to="." method="OnGameStart"]
+[connection signal="pressed" from="VSplitContainer/Button2" to="." method="OnEditorStart"]
+[connection signal="pressed" from="VSplitContainer/Button3" to="." method="OnExit"]

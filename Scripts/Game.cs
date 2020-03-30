@@ -30,12 +30,13 @@ public class Game : Node2D
 
   public void CallWrapAround()
   {
-    GetTree().CallGroup("WrapAround", "recalculate_wrap_area");
+    GetTree().CallGroup("resized", "recalculate_wrap_area");
   }
 
 
   private void _on_Game_item_rect_changed()
   {
+    GD.Print(GetViewport());
     CallWrapAround();
   }
 
@@ -89,4 +90,3 @@ public class Game : Node2D
     AddChild(player);
   }
 }
-
