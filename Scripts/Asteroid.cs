@@ -8,10 +8,16 @@ public class Asteroid : RigidBody2D
   readonly PackedScene asteroidSmallScene = GD.Load<PackedScene>("res://objects/AsteroidSmall.tscn");
   readonly RandomNumberGenerator rng = new RandomNumberGenerator();
 
+  [Signal]
+  public delegate void OnExplode();
+
   // Called when the node enters the scene tree for the first time.
   public override void _Ready()
   {
     destroyed = false;
+
+    var camera = GetNode("/root/Game/MainCamera/ScreenShake");
+    Connect("OnExplode", camera, "AsteroidExploded");
   }
 
   public void Destroy()
@@ -23,6 +29,7 @@ public class Asteroid : RigidBody2D
     SpawnAsteroidSmall();
     GetParent().RemoveChild(this);
     QueueFree();
+    EmitSignal("OnExplode");
   }
 
   virtual protected void SpawnAsteroidSmall(int num = 4)

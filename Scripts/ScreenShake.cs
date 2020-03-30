@@ -64,7 +64,12 @@ public class ScreenShake : Node
 
   private void _on_Player_OnFire()
   {
-    Start(3f, 15, 4, 0);
+    Start(.1f, 15, 4, 0);
+  }
+
+  private void AsteroidExploded()
+  {
+    Start(.1f, 60, 2, 0);
   }
 }
 
