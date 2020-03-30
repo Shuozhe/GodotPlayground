@@ -3,14 +3,12 @@ using System;
 
 public class AsteroidSmall : Asteroid
 {
-  // Declare member variables here. Examples:
-  // private int a = 2;
-  // private string b = "text";
+  protected override int SCORE_VALUE { get { return 50; } }
 
   // Called when the node enters the scene tree for the first time.
   public override void _Ready()
   {
-
+    base._Ready();
   }
 
   override protected void SpawnAsteroidSmall(int num = 0) { }

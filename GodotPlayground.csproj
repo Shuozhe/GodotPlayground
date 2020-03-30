@@ -61,6 +61,8 @@
     <Compile Include="Scripts\Laser.cs" />
     <Compile Include="Scripts\LaserWeapon.cs" />
     <Compile Include="Scripts\Player.cs" />
+    <Compile Include="Scripts\PointsScored.cs" />
+    <Compile Include="Scripts\Score.cs" />
     <Compile Include="Scripts\ScreenShake.cs" />
   </ItemGroup>
   <ItemGroup>
