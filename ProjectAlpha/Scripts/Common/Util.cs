@@ -23,4 +23,9 @@ class Dialogs
 class Actions
 {
   readonly static public string BACK = "back";
+  readonly static public string FIRE = "fire";
+  readonly static public string GAME_LEFT = "game_left";
+  readonly static public string GAME_RIGHT = "game_right";
+  readonly static public string GAME_UP = "game_up";
+  readonly static public string GAME_BOTTOM = "game_down";
 }
