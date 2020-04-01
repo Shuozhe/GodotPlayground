@@ -4,6 +4,8 @@
 [ext_resource path="res://ProjectAlpha/GameObjects/PlayerShip.tscn" type="PackedScene" id=2]
 [ext_resource path="res://ProjectAlpha/Scripts/Objects/PlayerShip.cs" type="Script" id=3]
 
+
+
 [node name="Game" type="Node"]
 script = ExtResource( 1 )
 

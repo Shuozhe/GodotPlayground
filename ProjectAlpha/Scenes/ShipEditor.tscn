@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://ProjectAlpha/Scripts/ShipEditor.cs" type="Script" id=1]
+[ext_resource path="res://ProjectAlpha/GameObjects/PlayerShip.tscn" type="PackedScene" id=2]
 
 [node name="ShipEditor" type="Node"]
 script = ExtResource( 1 )
@@ -12,3 +13,8 @@ text = "ShipEditor"
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="PlayerShip" parent="." instance=ExtResource( 2 )]
+position = Vector2( 392.632, 322.105 )
+scale = Vector2( 5, 5 )
+mode = 1

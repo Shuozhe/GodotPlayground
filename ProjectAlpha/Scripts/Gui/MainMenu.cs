@@ -10,22 +10,22 @@ public class MainMenu : Control
 
   private void OnGameStart()
   {
-    GetTree().ChangeScene(Dialogs.GameMain);
+	GetTree().ChangeScene(Dialogs.GameMain);
   }
 
   private void OnEditorStart()
   {
-    GetTree().ChangeScene(Dialogs.ShipEditor);
+	GetTree().ChangeScene(Dialogs.ShipEditor);
   }
 
   private void OnExit()
   {
-    GetTree().Quit();
+	GetTree().Quit();
   }
 
   public override void _Notification(int what)
   {
-    if (what == MainLoop.NotificationWmQuitRequest)
-      GetTree().Quit(); // default behavior
+	if (what == MainLoop.NotificationWmQuitRequest)
+	  GetTree().Quit(); // default behavior
   }
 }

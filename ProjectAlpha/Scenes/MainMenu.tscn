@@ -5,8 +5,10 @@
 [node name="Menu" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 2.58472
-margin_right = 2.58472
+margin_left = 11.5847
+margin_top = -1.0
+margin_right = 11.5847
+margin_bottom = -1.0
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
