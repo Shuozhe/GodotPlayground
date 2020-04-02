@@ -3,6 +3,9 @@ using System;
 
 public class PlayerShip : RigidBody2D
 {
+  [Signal]
+  delegate void OnWeaponSelected(WeaponSlot weapon);
+
   readonly Vector2 left_ = new Vector2(-100, 0);
   readonly Vector2 right_ = new Vector2(100, 0);
   readonly Vector2 up_ = new Vector2(0, -300);

@@ -5,7 +5,6 @@ public class GameMain : Node
 {
   public override void _Ready()
   {
-
   }
 
   public override void _UnhandledInput(InputEvent ev)

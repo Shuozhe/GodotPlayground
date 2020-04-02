@@ -28,4 +28,5 @@ class Actions
   readonly static public string GAME_RIGHT = "game_right";
   readonly static public string GAME_UP = "game_up";
   readonly static public string GAME_BOTTOM = "game_down";
+  readonly static public string GAME_SELECT = "game_select";
 }

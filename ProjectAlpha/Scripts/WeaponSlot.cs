@@ -14,4 +14,26 @@ public class WeaponSlot : Node2D
     ammo.GlobalPosition = GlobalPosition;
     GetNode("/root/Game").AddChild(ammo);
   }
+
+  private void OnHitboxInput(Node viewport, InputEvent ev, int shapeIdx)
+  {
+    if (ev.IsActionPressed(Actions.GAME_SELECT))
+    {
+      GetParent().GetParent<PlayerShip>().EmitSignal("OnWeaponSelected", this);
+    }
+  }
+
+  private void OnHitboxEntered()
+  {
+    GetNode<Polygon2D>("Shape").Color = Colors.DarkGray;
+  }
+
+
+  private void OnHitboxExited()
+  {
+    GetNode<Polygon2D>("Shape").Color = Colors.White;
+  }
+
 }
+
+

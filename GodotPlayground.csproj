@@ -53,6 +53,7 @@
     <Reference Include="System" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ProjectAlpha\Scripts\Common\PlayerShipSystem.cs" />
     <Compile Include="ProjectAlpha\Scripts\Common\Util.cs" />
     <Compile Include="ProjectAlpha\Scripts\GameMain.cs" />
     <Compile Include="ProjectAlpha\Scripts\Gui\MainMenu.cs" />

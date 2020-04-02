@@ -1,10 +1,7 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://ProjectAlpha/Scripts/GameMain.cs" type="Script" id=1]
 [ext_resource path="res://ProjectAlpha/GameObjects/PlayerShip.tscn" type="PackedScene" id=2]
-[ext_resource path="res://ProjectAlpha/Scripts/Objects/PlayerShip.cs" type="Script" id=3]
-
-
 
 [node name="Game" type="Node"]
 script = ExtResource( 1 )
@@ -19,4 +16,3 @@ __meta__ = {
 
 [node name="PlayerShip" parent="." instance=ExtResource( 2 )]
 position = Vector2( 320.658, 114.888 )
-script = ExtResource( 3 )

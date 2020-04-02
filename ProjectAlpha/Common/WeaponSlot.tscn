@@ -1,9 +1,24 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://ProjectAlpha/Scripts/WeaponSlot.cs" type="Script" id=1]
 
+[sub_resource type="ConvexPolygonShape2D" id=1]
+points = PoolVector2Array( 10, 0, 0, 10, -10, 0, 0, -10 )
+
 [node name="WeaponSlot" type="Node2D"]
 script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true
+}
 
-[node name="Polygon2D" type="Polygon2D" parent="."]
+[node name="Shape" type="Polygon2D" parent="."]
 polygon = PoolVector2Array( 8, 0, 0, 8, -8, 0, 0, -8 )
+
+[node name="Hitbox" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
+shape = SubResource( 1 )
+[connection signal="input_event" from="Hitbox" to="." method="OnHitboxInput"]
+[connection signal="mouse_entered" from="Hitbox" to="." method="OnHitboxEntered"]
+[connection signal="mouse_exited" from="Hitbox" to="." method="OnHitboxExited"]
