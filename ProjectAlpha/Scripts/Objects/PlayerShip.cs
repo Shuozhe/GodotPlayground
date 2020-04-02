@@ -16,18 +16,6 @@ public class PlayerShip : RigidBody2D
 
   }
 
-  public override void _PhysicsProcess(float delta)
-  {
-    if (Input.IsActionPressed(Actions.GAME_LEFT))
-      ApplyCentralImpulse(left_ * delta);
-    if (Input.IsActionPressed(Actions.GAME_RIGHT))
-      ApplyCentralImpulse(right_ * delta);
-    if (Input.IsActionPressed(Actions.GAME_UP))
-      ApplyCentralImpulse(up_ * delta);
-    if (Input.IsActionPressed(Actions.GAME_BOTTOM))
-      ApplyCentralImpulse(down_ * delta);
-  }
-
   public override void _UnhandledInput(InputEvent ev)
   {
     if (ev.IsActionPressed(Actions.FIRE))
@@ -35,5 +23,10 @@ public class PlayerShip : RigidBody2D
       foreach (WeaponSlot weapon in GetNode<Node2D>("Weapons").GetChildren())
         weapon.Fire();
     }
+  }
+
+  public void ApplyImpuse(float left_)
+  {
+
   }
 }

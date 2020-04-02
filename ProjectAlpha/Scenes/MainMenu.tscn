@@ -5,21 +5,19 @@
 [node name="Menu" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 11.5847
-margin_top = -1.0
-margin_right = 11.5847
-margin_bottom = -1.0
 script = ExtResource( 1 )
 __meta__ = {
+"_edit_lock_": true,
 "_edit_use_anchors_": false
 }
 
 [node name="VSplitContainer" type="VBoxContainer" parent="."]
-margin_left = 67.2025
-margin_top = 111.143
-margin_right = 411.203
-margin_bottom = 645.143
+margin_left = 53.5987
+margin_top = 51.2866
+margin_right = 397.599
+margin_bottom = 585.287
 __meta__ = {
+"_edit_lock_": true,
 "_edit_use_anchors_": false
 }
 
