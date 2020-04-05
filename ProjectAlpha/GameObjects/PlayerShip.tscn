@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Assets/images/ships/playerShip1_orange.png" type="Texture" id=1]
 [ext_resource path="res://ProjectAlpha/Common/WeaponSlot.tscn" type="PackedScene" id=2]
 [ext_resource path="res://ProjectAlpha/Scripts/Objects/PlayerShip.cs" type="Script" id=3]
+[ext_resource path="res://ProjectAlpha/Common/ThrusterSlot.tscn" type="PackedScene" id=4]
 
 [node name="PlayerShip" type="RigidBody2D"]
 gravity_scale = 0.0
@@ -27,3 +28,12 @@ position = Vector2( 48, 0 )
 position = Vector2( 0, -37.2519 )
 
 [node name="Thrusters" type="Node2D" parent="."]
+
+[node name="ThrusterSlot" parent="Thrusters" instance=ExtResource( 4 )]
+position = Vector2( -48, 24 )
+
+[node name="ThrusterSlot2" parent="Thrusters" instance=ExtResource( 4 )]
+position = Vector2( 0, 37.7481 )
+
+[node name="ThrusterSlot3" parent="Thrusters" instance=ExtResource( 4 )]
+position = Vector2( 48, 24 )

@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://ProjectAlpha/Scripts/GameMain.cs" type="Script" id=1]
 [ext_resource path="res://ProjectAlpha/GameObjects/PlayerShip.tscn" type="PackedScene" id=2]
+[ext_resource path="res://assets/images/backgrounds/darkPurple.png" type="Texture" id=3]
 
 [node name="Game" type="Node"]
 script = ExtResource( 1 )
@@ -14,5 +15,12 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Sprite" type="Sprite" parent="."]
+texture = ExtResource( 3 )
+centered = false
+offset = Vector2( -10, -10 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 1440, 900 )
+
 [node name="PlayerShip" parent="." instance=ExtResource( 2 )]
-position = Vector2( 320.658, 114.888 )
+position = Vector2( 610.017, 609.156 )

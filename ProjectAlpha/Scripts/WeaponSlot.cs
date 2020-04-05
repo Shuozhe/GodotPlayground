@@ -4,7 +4,7 @@ using System;
 public class WeaponSlot : Node2D
 {
   [Export]
-  private PackedScene ammoScene_ = GD.Load<PackedScene>("res://Objects/Laser.tscn");
+  private PackedScene ammoScene_ = GD.Load<PackedScene>("res://ProjectAlpha/Common/Laser.tscn");
 
   [Export]
   internal Color Color = Colors.White;
@@ -25,8 +25,10 @@ public class WeaponSlot : Node2D
 
   public void Fire()
   {
-    var ammo = (Area2D)ammoScene_.Instance();
+    var ammo = (Laser)ammoScene_.Instance();
     ammo.GlobalPosition = GlobalPosition;
+    ammo.GlobalRotation = GlobalRotation;
+    ammo.direction = Vector2.Up.Rotated(GlobalRotation);
     GetNode("/root").GetChild(0).AddChild(ammo);
   }
 

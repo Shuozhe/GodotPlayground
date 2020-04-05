@@ -6,7 +6,7 @@ using System.Diagnostics;
 public class Laser : Area2D
 {
 
-  Vector2 direction = new Vector2(0, -1);
+  public Vector2 direction = new Vector2(0, -1);
   float speed = 1000;
   bool destroyed = false;
 

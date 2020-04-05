@@ -59,6 +59,7 @@
     <Compile Include="ProjectAlpha\Scripts\Gui\MainMenu.cs" />
     <Compile Include="ProjectAlpha\Scripts\Objects\PlayerShip.cs" />
     <Compile Include="ProjectAlpha\Scripts\ShipEditor.cs" />
+    <Compile Include="ProjectAlpha\Scripts\ThrusterSlot.cs" />
     <Compile Include="ProjectAlpha\Scripts\WeaponSlot.cs" />
     <Compile Include="Scripts\Asteroid.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
