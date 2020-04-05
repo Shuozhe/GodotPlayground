@@ -7,6 +7,9 @@ public class ShipEditor : Node
 
   WeaponSlot currentWeapon_ = null;
 
+  Camera2D camera_;
+  Vector2 zoomStep_ = new Vector2(0.1f, 0.1f);
+
   public override void _Ready()
   {
     ship_ = PlayerShipSystem.Instance().GetPlayer();
@@ -14,15 +17,23 @@ public class ShipEditor : Node
     AddChild(ship_);
     ship_.Connect("OnWeaponSelected", this, "OnPlayerShipWeaponSelected");
 
+    camera_ = GetNode<Camera2D>("Camera2D");
+
     //OS.WindowFullscreen = true;
   }
 
-  public override void _UnhandledInput(InputEvent ev)
+  public override void _Input(InputEvent ev)
   {
     if (ev.IsActionReleased(Actions.BACK))
-    {
-      // Todo: somekind of dialog stack?
       GetTree().ChangeScene(Dialogs.MainMenu);
+
+    if (ev.IsActionReleased(Actions.ZOOM_DOWN))
+      camera_.Zoom += zoomStep_;
+    if (ev.IsActionReleased(Actions.ZOOM_UP))
+    {
+      camera_.Zoom -= zoomStep_;
+      if (camera_.Zoom < zoomStep_)
+        camera_.Zoom = zoomStep_;
     }
   }
 
