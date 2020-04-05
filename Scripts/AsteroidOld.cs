@@ -2,7 +2,7 @@ using Godot;
 using System;
 using System.Diagnostics;
 
-public class Asteroid : RigidBody2D
+public class AsteroidOld : RigidBody2D
 {
   private bool destroyed = false;
 

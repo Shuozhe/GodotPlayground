@@ -1,7 +1,7 @@
 using Godot;
 using System;
 
-public class AsteroidSmall : Asteroid
+public class AsteroidSmall : AsteroidOld
 {
   protected override int SCORE_VALUE { get { return 50; } }
 

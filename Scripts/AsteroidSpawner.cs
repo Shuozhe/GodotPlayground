@@ -26,12 +26,12 @@ public class AsteroidSpawner : Node
 
   private void SpawnAsteroid()
   {
-    Asteroid newAst = (Asteroid)asteroid_.Instance();
+    AsteroidOld newAst = (AsteroidOld)asteroid_.Instance();
     InitializeAsteroid(newAst);
     AddChild(newAst);
   }
 
-  private void InitializeAsteroid(Asteroid asteroid)
+  private void InitializeAsteroid(AsteroidOld asteroid)
   {
     var rect = GetViewport().Size;
     asteroid.Position = new Vector2((float)GD.RandRange(0, rect.x), -100);

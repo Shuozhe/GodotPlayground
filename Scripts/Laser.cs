@@ -34,7 +34,7 @@ public class Laser : Area2D
 
   private void _on_Laser_body_shape_entered(int body_id, object body, int body_shape, int area_shape)
   {
-    var asteroid = body as Asteroid;
+    var asteroid = body as AsteroidOld;
     if (asteroid != null && asteroid.IsInGroup("Asteroids"))
     {
       GD.Print("Asteroid hit");

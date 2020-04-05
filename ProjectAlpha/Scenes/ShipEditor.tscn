@@ -15,3 +15,37 @@ __meta__ = {
 
 [node name="Camera2D" type="Camera2D" parent="."]
 current = true
+
+[node name="GUI" type="Control" parent="."]
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VSplitContainer" type="VSplitContainer" parent="GUI"]
+margin_left = -610.0
+margin_top = -336.0
+margin_right = -210.0
+margin_bottom = 295.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ProgressBar" type="ProgressBar" parent="GUI/VSplitContainer"]
+margin_right = 400.0
+margin_bottom = 14.0
+value = 5.0
+
+[node name="SpinBox" type="SpinBox" parent="GUI/VSplitContainer"]
+margin_top = 26.0
+margin_right = 400.0
+margin_bottom = 50.0
+size_flags_vertical = 0
+prefix = "SpinBox"
+suffix = "SpinBox"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HSplitContainer" type="HSplitContainer" parent="GUI/VSplitContainer"]
+margin_right = 40.0
+margin_bottom = 40.0

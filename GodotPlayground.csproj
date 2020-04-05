@@ -57,11 +57,12 @@
     <Compile Include="ProjectAlpha\Scripts\Common\Util.cs" />
     <Compile Include="ProjectAlpha\Scripts\GameMain.cs" />
     <Compile Include="ProjectAlpha\Scripts\Gui\MainMenu.cs" />
+    <Compile Include="ProjectAlpha\Scripts\Objects\Asteroid.cs" />
     <Compile Include="ProjectAlpha\Scripts\Objects\PlayerShip.cs" />
     <Compile Include="ProjectAlpha\Scripts\ShipEditor.cs" />
     <Compile Include="ProjectAlpha\Scripts\ThrusterSlot.cs" />
     <Compile Include="ProjectAlpha\Scripts\WeaponSlot.cs" />
-    <Compile Include="Scripts\Asteroid.cs" />
+    <Compile Include="Scripts\AsteroidOld.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Scripts\AsteroidSmall.cs" />
     <Compile Include="Scripts\AsteroidSpawner.cs" />
