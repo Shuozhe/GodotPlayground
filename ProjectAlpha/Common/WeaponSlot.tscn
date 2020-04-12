@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://ProjectAlpha/Scripts/WeaponSlot.cs" type="Script" id=1]
+[ext_resource path="res://ProjectAlpha/Scripts/Common/WeaponSlot.cs" type="Script" id=1]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 10, 0, 0, 10, -10, 0, 0, -10 )

@@ -1,9 +1,28 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=6 format=2]
 
-[ext_resource path="res://ProjectAlpha/Scripts/ThrusterSlot.cs" type="Script" id=1]
+[ext_resource path="res://ProjectAlpha/Scripts/Common/ThrusterSlot.cs" type="Script" id=1]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 0, -11, -11, 11, 11, 11 )
+
+[sub_resource type="Gradient" id=2]
+colors = PoolColorArray( 1, 0, 0, 1, 1, 0.952941, 0, 1 )
+
+[sub_resource type="GradientTexture" id=3]
+gradient = SubResource( 2 )
+
+[sub_resource type="ParticlesMaterial" id=4]
+emission_shape = 2
+emission_box_extents = Vector3( 8, 0, 0 )
+flag_disable_z = true
+direction = Vector3( 0, 1, 0 )
+spread = 15.0
+gravity = Vector3( 0, 0, 0 )
+initial_velocity = 50.0
+initial_velocity_random = 0.5
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+color_ramp = SubResource( 3 )
 
 [node name="ThrusterSlot" type="Node2D"]
 script = ExtResource( 1 )
@@ -19,3 +38,9 @@ __meta__ = {
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
 shape = SubResource( 1 )
+
+[node name="Particles2D" type="Particles2D" parent="."]
+position = Vector2( 0, 8 )
+emitting = false
+amount = 30
+process_material = SubResource( 4 )

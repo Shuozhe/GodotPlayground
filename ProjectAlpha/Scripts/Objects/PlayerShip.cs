@@ -32,7 +32,7 @@ public class PlayerShip : RigidBody2D
     foreach (var thruster in thrusters_)
     {
       if (thruster.power_ > 0)
-        ApplyImpulse(thruster.Position, thruster.thrust_ * thruster.power_ * delta);
+        ApplyImpulse(thruster.Position, Transform.BasisXform(thruster.thrust_ * thruster.power_ * delta));
     }
   }
 
@@ -90,7 +90,8 @@ public class PlayerShip : RigidBody2D
     if (idx >= 0 && idx < thrusters_.Count)
     {
       var thruster = thrusters_[idx];
-      thruster.power_ = strength;
+      GD.Print($"{idx} : {thrusters_.Count}");
+      thruster.UpdateStrength(strength);
     }
   }
 }
