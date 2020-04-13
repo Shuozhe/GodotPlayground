@@ -1,21 +1,13 @@
 using Godot;
 using System;
 
-public class Ray : Area2D
+public class Ray : RayCast2D
 {
-    // Declare member variables here. Examples:
-    // private int a = 2;
-    // private string b = "text";
+  private Line2D line_;
 
-    // Called when the node enters the scene tree for the first time.
-    public override void _Ready()
-    {
-        
-    }
-
-//  // Called every frame. 'delta' is the elapsed time since the previous frame.
-//  public override void _Process(float delta)
-//  {
-//      
-//  }
+  public override void _Ready()
+  {
+    line_ = GetNode<Line2D>("Line2D");
+    //line_.Points[1]
+  }
 }

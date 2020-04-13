@@ -25,11 +25,13 @@ public class WeaponSlot : Node2D
 
   public void Fire()
   {
-    var ammo = (Laser)ammoScene_.Instance();
-    ammo.GlobalPosition = GlobalPosition;
-    ammo.GlobalRotation = GlobalRotation;
-    ammo.direction = Vector2.Up.Rotated(GlobalRotation);
-    GetNode("/root").GetChild(0).AddChild(ammo);
+    var ammo = ammoScene_.Instance() as Laser;
+    if (ammo != null)
+    {
+      ammo.GlobalPosition = GlobalPosition;
+      ammo.direction = Vector2.Up.Rotated(GlobalRotation);
+      GetNode("/root").GetChild(0).AddChild(ammo);
+    }
   }
 
   public void Select(bool selected = true)
