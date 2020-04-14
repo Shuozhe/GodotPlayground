@@ -53,10 +53,11 @@
     <Reference Include="System" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ProjectAlpha\Scripts\Common\PlayerShipSystem.cs" />
+    <Compile Include="ProjectAlpha\Scripts\Common\IFireable.cs" />
+    <Compile Include="ProjectAlpha\Scripts\CS\PlayerShipSystem.cs" />
     <Compile Include="ProjectAlpha\Scripts\Common\Ray.cs" />
     <Compile Include="ProjectAlpha\Scripts\Common\ThrusterSlot.cs" />
-    <Compile Include="ProjectAlpha\Scripts\Common\Util.cs" />
+    <Compile Include="ProjectAlpha\Scripts\CS\Util.cs" />
     <Compile Include="ProjectAlpha\Scripts\Common\WeaponSlot.cs" />
     <Compile Include="ProjectAlpha\Scripts\GameMain.cs" />
     <Compile Include="ProjectAlpha\Scripts\Gui\MainMenu.cs" />
@@ -68,7 +69,7 @@
     <Compile Include="Scripts\AsteroidSmall.cs" />
     <Compile Include="Scripts\AsteroidSpawner.cs" />
     <Compile Include="Scripts\Game.cs" />
-    <Compile Include="Scripts\Laser.cs" />
+    <Compile Include="ProjectAlpha\Scripts\Common\Laser.cs" />
     <Compile Include="Scripts\LaserWeapon.cs" />
     <Compile Include="Scripts\Player.cs" />
     <Compile Include="Scripts\PointsScored.cs" />

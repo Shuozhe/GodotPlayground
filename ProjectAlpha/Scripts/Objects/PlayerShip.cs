@@ -32,7 +32,7 @@ public class PlayerShip : RigidBody2D
     foreach (var thruster in thrusters_)
     {
       if (thruster.power_ > 0)
-        ApplyImpulse(thruster.Position, Transform.BasisXform(thruster.thrust_ * thruster.power_ * delta));
+        ApplyImpulse(thruster.Position.Rotated(GlobalRotation), Transform.BasisXform(thruster.thrust_ * thruster.power_ * delta));
     }
   }
 
@@ -74,7 +74,6 @@ public class PlayerShip : RigidBody2D
 
   public void ToggleEngine(int idx)
   {
-    GD.Print($"Toggle engine {idx}");
     if (idx >= 0 && idx < thrusters_.Count)
     {
       var thruster = thrusters_[idx];
@@ -90,7 +89,6 @@ public class PlayerShip : RigidBody2D
     if (idx >= 0 && idx < thrusters_.Count)
     {
       var thruster = thrusters_[idx];
-      GD.Print($"{idx} : {thrusters_.Count}");
       thruster.UpdateStrength(strength);
     }
   }

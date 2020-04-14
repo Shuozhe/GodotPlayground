@@ -16,9 +16,22 @@ public class ThrusterSlot : Node2D
     particle_.Emitting = false;
   }
 
-  public void UpdateStrength(float strength)
+  public override void _Draw()
   {
-    particle_.Emitting = strength > 0f;
-    power_ = strength;
+    // TODO: why is this always 0?
+    if (power_ > 0f)
+    {
+      DrawLine(Vector2.Zero, thrust_, Colors.Red, 5f);
+      GD.Print($"Drawing {thrust_}");
+    }
+    GD.Print($"_Draw: {power_}");
+  }
+
+  public void UpdateStrength(float power)
+  {
+    if (power != power_)
+      Update();
+    particle_.Emitting = power > 0f;
+    power_ = power;
   }
 }

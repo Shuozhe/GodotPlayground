@@ -22,10 +22,7 @@ public class GameMain : Node
     if (ev.IsActionReleased(Actions.BACK))
       // Todo: somekind of dialog stack?
       GetTree().ChangeScene(Dialogs.MainMenu);
-  }
 
-  public override void _PhysicsProcess(float delta)
-  {
     ship_.SetEngine(0, Input.GetActionStrength(Actions.GAME_LEFT));
     ship_.SetEngine(2, Input.GetActionStrength(Actions.GAME_RIGHT));
     ship_.SetEngine(1, Input.GetActionStrength(Actions.GAME_UP));

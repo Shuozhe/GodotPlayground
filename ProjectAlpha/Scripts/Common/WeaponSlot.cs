@@ -25,12 +25,13 @@ public class WeaponSlot : Node2D
 
   public void Fire()
   {
-    var ammo = ammoScene_.Instance() as Laser;
+    var ammo = ammoScene_.Instance() as IFireable;
     if (ammo != null)
     {
-      ammo.GlobalPosition = GlobalPosition;
-      ammo.direction = Vector2.Up.Rotated(GlobalRotation);
-      GetNode("/root").GetChild(0).AddChild(ammo);
+      GD.Print($"Fire: {ammo}");
+      //(ammo as Node2D)._Ready();
+      ammo.Fire(1f, GlobalPosition, GlobalRotation, Vector2.Up.Rotated(GlobalRotation));
+      GetNode("/root").GetChild(0).AddChild(ammo as Node2D);
     }
   }
 
@@ -62,7 +63,6 @@ public class WeaponSlot : Node2D
     if (!selected_)
       poly_.Color = Color;
   }
-
 }
 
 
