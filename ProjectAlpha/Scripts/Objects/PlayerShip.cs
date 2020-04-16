@@ -36,6 +36,12 @@ public class PlayerShip : RigidBody2D
     }
   }
 
+  public override void _Input(InputEvent ev)
+  {
+    if (ev.IsActionReleased(Actions.FIRE))
+      Fire();
+  }
+
   internal void ToggleSpaceBreak()
   {
     if (spaceBreak_)

@@ -28,8 +28,6 @@ public class WeaponSlot : Node2D
     var ammo = ammoScene_.Instance() as IFireable;
     if (ammo != null)
     {
-      GD.Print($"Fire: {ammo}");
-      //(ammo as Node2D)._Ready();
       ammo.Fire(1f, GlobalPosition, GlobalRotation, Vector2.Up.Rotated(GlobalRotation));
       GetNode("/root").GetChild(0).AddChild(ammo as Node2D);
     }

@@ -22,8 +22,16 @@ polygon = PoolVector2Array( 8, -40, -8, -40, -48, -8, -48, 24, -8, 40, 8, 40, 48
 [node name="WeaponSlot" parent="Weapons" instance=ExtResource( 2 )]
 position = Vector2( -48, 0 )
 
+[node name="WeaponSlot4" parent="Weapons" instance=ExtResource( 2 )]
+position = Vector2( -48, 0 )
+rotation = -0.785398
+
 [node name="WeaponSlot2" parent="Weapons" instance=ExtResource( 2 )]
 position = Vector2( 48, 0 )
+
+[node name="WeaponSlot5" parent="Weapons" instance=ExtResource( 2 )]
+position = Vector2( 48, 0 )
+rotation = 0.785398
 
 [node name="WeaponSlot3" parent="Weapons" instance=ExtResource( 2 )]
 position = Vector2( 0, -37.2519 )

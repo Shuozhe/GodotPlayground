@@ -11,12 +11,6 @@ public class GameMain : Node
     ship_ = GetNode<PlayerShip>("PlayerShip");
   }
 
-  public override void _Input(InputEvent ev)
-  {
-    if (ev.IsActionReleased(Actions.FIRE))
-      ship_.Fire();
-  }
-
   public override void _UnhandledInput(InputEvent ev)
   {
     if (ev.IsActionReleased(Actions.BACK))
