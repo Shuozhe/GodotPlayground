@@ -15,21 +15,35 @@ public class WeaponSlot : Node2D
 
   private Polygon2D poly_ = null;
 
+  IFireable ammo_ = null;
+
   private bool selected_ = false;
 
   // Called when the node enters the scene tree for the first time.
   public override void _Ready()
   {
     poly_ = GetNode<Polygon2D>("Shape");
+    ammo_ = (IFireable)ammoScene_.Instance();
+    var rigid = (ammo_ as RigidBody2D);
+    if (rigid != null)
+      rigid.Sleeping = true;
+    if (ammo_.IsLaser())
+    {
+      GetNode("/root").GetChild(0).AddChild(ammo_ as Node2D);
+      (ammo_ as RayCast2D).Enabled = true;
+    }
   }
 
   public void Fire()
   {
-    var ammo = ammoScene_.Instance() as IFireable;
-    if (ammo != null)
+    if (ammo_ != null)
     {
-      ammo.Fire(1f, GlobalPosition, GlobalRotation, Vector2.Up.Rotated(GlobalRotation));
-      GetNode("/root").GetChild(0).AddChild(ammo as Node2D);
+      ammo_.Fire(1f, GlobalPosition, GlobalRotation, Vector2.Up.Rotated(GlobalRotation));
+      if (!ammo_.IsLaser())
+      {
+        GetNode("/root").GetChild(0).AddChild(ammo_ as Node2D);
+        ammo_ = (IFireable)ammoScene_.Instance();
+      }
     }
   }
 

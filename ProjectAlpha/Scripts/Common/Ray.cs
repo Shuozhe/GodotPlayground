@@ -32,4 +32,9 @@ public class Ray : RayCast2D, IFireable
     CastTo = direction * 500;
     Enabled = true;
   }
+
+  public bool IsLaser()
+  {
+    return true;
+  }
 }
