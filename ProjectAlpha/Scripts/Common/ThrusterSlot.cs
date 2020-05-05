@@ -22,9 +22,7 @@ public class ThrusterSlot : Node2D
     if (power_ > 0f)
     {
       DrawLine(Vector2.Zero, thrust_, Colors.Red, 5f);
-      GD.Print($"Drawing {thrust_}");
     }
-    GD.Print($"_Draw: {power_}");
   }
 
   public void UpdateStrength(float power)

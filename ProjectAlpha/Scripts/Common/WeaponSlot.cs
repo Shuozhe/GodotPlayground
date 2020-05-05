@@ -31,6 +31,7 @@ public class WeaponSlot : Node2D
     {
       GetNode("/root").GetChild(0).AddChild(ammo_ as Node2D);
       (ammo_ as RayCast2D).Enabled = true;
+      AddChild(ammo_ as Node2D);
     }
   }
 

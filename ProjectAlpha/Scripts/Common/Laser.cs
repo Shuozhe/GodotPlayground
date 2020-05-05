@@ -25,7 +25,6 @@ public class Laser : Area2D, IFireable
   // - - - = = = private signals = = = - - -
   private void _on_VisibilityNotifier2D_viewport_exited(object viewport)
   {
-    GD.Print("Laser despawns!");
     this.CallDeferred("Destroy");
   }
 

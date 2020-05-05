@@ -10,9 +10,17 @@ public class Ray : RayCast2D, IFireable
 
   public override void _PhysicsProcess(float delta)
   {
-    hit_ = IsColliding();
+    Position = Vector2.Zero;
+    CastTo = Vector2.Up * 500;
+    //RayCast2D:
+    var hit = IsColliding();
+    if (hit != hit_)
+      //CanvasItem:
+      Update();
+    hit_ = hit;
+
     if (hit_)
-      collide_ = GetCollisionPoint() - Position;
+      collide_ = ToLocal(GetCollisionPoint());
     else
       collide_ = CastTo;
   }
@@ -28,8 +36,7 @@ public class Ray : RayCast2D, IFireable
 
   public void Fire(float strength, Vector2 globalPos, float rotation, Vector2 direction)
   {
-    Position = globalPos;
-    CastTo = direction * 500;
+    //RayCast2D:
     Enabled = true;
   }
 
