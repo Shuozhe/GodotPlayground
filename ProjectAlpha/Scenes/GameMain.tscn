@@ -5,10 +5,24 @@
 [ext_resource path="res://assets/images/backgrounds/darkPurple.png" type="Texture" id=3]
 [ext_resource path="res://ProjectAlpha/GameObjects/Asteroid.tscn" type="PackedScene" id=4]
 
-[sub_resource type="Shader" id=1]
+[sub_resource type="Shader" id=3]
+code = "shader_type canvas_item;
+
+uniform vec2 direction = vec2(0.0,-1.0);
+uniform float speed_scale = 0.5;
+
+void fragment(){
+
+
+     vec2 move = direction * TIME * speed_scale;
+
+     COLOR = texture(TEXTURE, UV + move);   
+}"
 
 [sub_resource type="ShaderMaterial" id=2]
-shader = SubResource( 1 )
+shader = SubResource( 3 )
+shader_param/direction = Vector2( 0, -1 )
+shader_param/speed_scale = 0.5
 
 [node name="Game" type="Node"]
 script = ExtResource( 1 )
@@ -23,7 +37,6 @@ __meta__ = {
 
 [node name="Background" type="Sprite" parent="."]
 material = SubResource( 2 )
-position = Vector2( 0, -1.22772 )
 texture = ExtResource( 3 )
 centered = false
 offset = Vector2( -10, -10 )
@@ -32,6 +45,15 @@ region_rect = Rect2( 0, 0, 1440, 900 )
 
 [node name="PlayerShip" parent="." instance=ExtResource( 2 )]
 position = Vector2( 610.017, 609.156 )
+
+[node name="Camera2D" type="Camera2D" parent="PlayerShip"]
+position = Vector2( 0, -400 )
+current = true
+zoom = Vector2( 2, 2 )
+drag_margin_h_enabled = true
+smoothing_enabled = true
+smoothing_speed = 1.0
+editor_draw_drag_margin = true
 
 [node name="RigidBody2D" parent="." instance=ExtResource( 4 )]
 position = Vector2( 830.544, 320.762 )

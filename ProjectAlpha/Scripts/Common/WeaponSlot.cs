@@ -29,13 +29,13 @@ public class WeaponSlot : Node2D
       rigid.Sleeping = true;
     if (ammo_.IsLaser())
     {
-      GetNode("/root").GetChild(0).AddChild(ammo_ as Node2D);
       (ammo_ as RayCast2D).Enabled = true;
+      // TODO: this throws error currently
       AddChild(ammo_ as Node2D);
     }
   }
 
-  public void Fire()
+  public void Fire(bool pressed)
   {
     if (ammo_ != null)
     {

@@ -36,10 +36,16 @@ public class PlayerShip : RigidBody2D
     }
   }
 
+  public override void _Process(float delta)
+  {
+  }
+
   public override void _Input(InputEvent ev)
   {
+    if (ev.IsActionPressed(Actions.FIRE))
+      Fire(true);
     if (ev.IsActionReleased(Actions.FIRE))
-      Fire();
+      Fire(false);
   }
 
   internal void ToggleSpaceBreak()
@@ -72,10 +78,10 @@ public class PlayerShip : RigidBody2D
 
   }
 
-  public void Fire(int idx = -1)
+  public void Fire(bool pressed)
   {
     foreach (WeaponSlot weapon in GetNode<Node2D>("Weapons").GetChildren())
-      weapon.Fire();
+      weapon.Fire(pressed);
   }
 
   public void ToggleEngine(int idx)
